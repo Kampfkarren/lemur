@@ -64,7 +64,10 @@ function Signal:Connect(callback)
 		internal.listeners = immutableRemoveValue(internal.listeners, callback)
 	end
 
-	return connection
+	return {
+		Disconnect = disconnect,
+		disconnect = disconnect
+	}
 end
 
 function Signal:Fire(...)
@@ -98,7 +101,6 @@ end
 
 -- deprecated methods (my code's not switching for my own reasons)
 Signal.connect = Signal.Connect
-Signal.disconnect = Signal.Disconnect
 Signal.wait = Signal.Wait
 
 return Signal
