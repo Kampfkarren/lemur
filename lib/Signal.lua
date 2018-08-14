@@ -96,4 +96,9 @@ function Signal:_DisconnectAllListeners()
 	internal.listeners = {}
 end
 
+-- deprecated methods (my code's not switching for my own reasons)
+Signal.connect = Signal.Connect
+Signal.disconnect = Signal.Disconnect
+Signal.wait = Signal.Wait
+
 return Signal
