@@ -59,7 +59,8 @@ function Signal:Connect(callback)
 	end
 
 	return {
-		Disconnect = disconnect
+		Disconnect = disconnect,
+		disconnect = disconnect
 	}
 end
 
@@ -87,7 +88,6 @@ end
 
 -- deprecated methods (my code's not switching for my own reasons)
 Signal.connect = Signal.Connect
-Signal.disconnect = Signal.Disconnect
 Signal.wait = Signal.Wait
 
 return Signal
