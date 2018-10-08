@@ -5,6 +5,7 @@ This document should remain up-to-date with current API coverage and status.
 
 ## Implemented Enums
 - ConnectionState
+- DataStoreRequestType
 - EasingDirection
 - EasingStyle
 - Font
@@ -28,7 +29,8 @@ This document should remain up-to-date with current API coverage and status.
 * settings
 	* Rendering
 		* QualityLevel
-* spawn (stub)
+* delay
+* spawn
 * tick
 * typeof
 * wait (stub)
@@ -66,7 +68,7 @@ This document should remain up-to-date with current API coverage and status.
 * AnalyticsService
 * BindableEvent
 	* Fire(...)
-* BoolValue, StringValue, IntValue, ObjectValue
+* BoolValue, StringValue, IntValue, NumberValue, ObjectValue
 	* Value
 * Folder
 * Frame
@@ -133,6 +135,22 @@ This document should remain up-to-date with current API coverage and status.
 	* ScrollBarThickness
 	* ScrollingDirection
 	* ScrollingEnabled
+* TextButton
+	* Font
+	* Text
+	* TextColor3
+	* TextSize
+	* TextWrapped
+	* TextXAlignment
+	* TextYAlignment
+* TextLabel
+	* Font
+	* Text
+	* TextColor3
+	* TextSize
+	* TextWrapped
+	* TextXAlignment
+	* TextYAlignment
 * UIGridStyleLayout
 	* HorizontalAlignment
 	* SortOrder
@@ -159,6 +177,7 @@ This document should remain up-to-date with current API coverage and status.
 * RunService
 	* Heartbeat
 	* RenderStepped
+	* IsServer()
 	* IsStudio()
 * ServerScriptService
 * Stats
