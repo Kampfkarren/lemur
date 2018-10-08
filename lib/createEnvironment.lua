@@ -44,7 +44,7 @@ local function createEnvironment(habitat)
 	end
 
 	environment.game = habitat.game
-	environment.workspace = game:GetService("Workspace")
+	environment.workspace = habitat.game:GetService("Workspace")
 
 	return environment
 end
