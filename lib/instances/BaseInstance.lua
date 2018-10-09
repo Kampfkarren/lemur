@@ -298,6 +298,12 @@ BaseInstance.metatable = {}
 BaseInstance.metatable[typeKey] = "Instance"
 
 function BaseInstance.metatable.__index(self, key)
+	local shim = getmetatable(self).instance.shims[key]
+
+	if shim then
+		return shim
+	end
+
 	local class = getmetatable(self).class
 
 	if class.properties[key] then
@@ -342,6 +348,7 @@ end
 
 function BaseInstance:new(...)
 	local internalInstance = {
+		shims = {},
 		destroyed = false,
 		properties = {},
 		propertySignals = {},
