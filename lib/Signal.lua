@@ -56,14 +56,17 @@ function Signal:Connect(callback)
 
 	internal.listeners = immutableAppend(internal.listeners, callback)
 
-	local function disconnect()
+	local connection = {}
+	connection.Connected = true
+
+	function connection.Disconnect()
+		connection.Connected = false
 		internal.listeners = immutableRemoveValue(internal.listeners, callback)
 	end
 
-	return {
-		Disconnect = disconnect,
-		disconnect = disconnect
-	}
+	connection.disconnect = connection.Disconnect
+
+	return connection
 end
 
 function Signal:Fire(...)
