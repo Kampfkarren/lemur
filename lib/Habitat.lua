@@ -72,7 +72,9 @@ function Habitat:loadFromFs(path, passedOptions)
 		end
 
 		if options.loadInitModules then
-			local init = instance:FindFirstChild("init")
+			local init = instance:FindFirstChild("init") or
+						 instance:FindFirstChild("init.server") or
+						 instance:FindFirstChild("init.client")
 
 			if init ~= nil then
 				for _, child in ipairs(instance:GetChildren()) do
