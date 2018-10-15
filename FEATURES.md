@@ -125,6 +125,8 @@ This document should remain up-to-date with current API coverage and status.
 * Model (stub)
 * ModuleScript
 	* Source
+* ParticleEffect
+	* Enabled
 * Script (stub)
 	* Source
 * ScreenGui
