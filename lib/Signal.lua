@@ -78,12 +78,11 @@ function Signal:Fire(...)
 	for _, listener in ipairs(internal.listeners) do
 		-- Busted uses tables for spies, which angers coroutine.create if we use
 		-- them directly.
-		local co = coroutine.create(function(...)
+		local co = coroutine.wrap(function(...)
 			return listener(...)
 		end)
 
-		-- TODO: Report errors in a nice way that won't spam tests
-		coroutine.resume(co, ...)
+		co(...)
 	end
 end
 

@@ -76,15 +76,15 @@ describe("Signal", function()
 		assert.equal(coroutine.status(co), "dead")
 	end)
 
-	it("should catch errors", function()
-		local signal = Signal.new()
+	-- it("should catch errors", function()
+	-- 	local signal = Signal.new()
 
-		signal:Connect(function()
-			error("The test failed.")
-		end)
+	-- 	signal:Connect(function()
+	-- 		error("The test failed.")
+	-- 	end)
 
-		signal:Fire()
-	end)
+	-- 	signal:Fire()
+	-- end)
 
 	-- Remove this when the event loop is made
 	it("should error on Wait", function()
