@@ -82,7 +82,7 @@ function Signal:Connect(callback)
 		internal.listeners = immutableRemoveValue(internal.listeners, callback)
 	end
 
-	connection.disconnect = connection.Disconnect
+	instance.internal.disconnect = connection.Disconnect
 
 	return connection
 end
