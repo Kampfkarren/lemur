@@ -4,6 +4,7 @@ local names = {
 	"BindableFunction",
 	"BoolValue",
 	"Camera",
+	"CollectionService",
 	"Configuration",
 	"ContentProvider",
 	"CoreGui",
